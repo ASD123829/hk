@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>黄凯的个人主页</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Microsoft YaHei', sans-serif;
+            background: linear-gradient(135deg, #2c3e50, #3498db);
+            color: #fff;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 30px;
+        }
+
+        .header {
+            text-align: center;
+            padding: 40px 0;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            margin-bottom: 30px;
+            animation: slideDown 1s ease-out;
+        }
+
+        .profile-section {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 25px;
+            border-radius: 10px;
+            margin-bottom: 25px;
+            backdrop-filter: blur(5px);
+        }
+
+        .info-card {
+            display: flex;
+            align-items: center;
+            margin: 15px 0;
+            padding: 15px;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .info-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+
+        .icon {
+            width: 45px;
+            height: 45px;
+            margin-right: 20px;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+        }
+
+        h1 {
+            color: #2ecc71;
+            font-size: 2.8em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        h2 {
+            color: #27ae60;
+            margin-bottom: 20px;
+        }
+
+        .badminton-img {
+            width: 100%;
+            max-width: 600px;
+            margin: 20px auto;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+
+        @keyframes slideDown {
+            from { transform: translateY(-50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+            h1 {
+                font-size: 2em;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <header class="header">
+        <h1>黄凯</h1>
+        <h2>羽毛球爱好者 & 运动健将</h2>
+    </header>
+
+    <main>
+        <section class="profile-section">
+            <div class="info-card">
+                <img src="https://img.icons8.com/ios/50/2ecc71/user-male--v1.png" class="icon" alt="年龄">
+                <div>
+                    <h3>22岁</h3>
+                    <p>保持年轻活力的秘诀是坚持运动</p>
+                </div>
+            </div>
+
+            <div class="info-card">
+                <img src="https://img.icons8.com/ios/50/2ecc71/standing-man.png" class="icon" alt="性别">
+                <div>
+                    <h3>男生</h3>
+                    <p>用运动诠释生命的活力</p>
+                </div>
+            </div>
+
+            <div class="info-card">
+                <img src="https://img.icons8.com/ios/50/2ecc71/badminton.png" class="icon" alt="爱好">
+                <div>
+                    <h3>羽毛球情缘</h3>
+                    <p>球龄8年，擅长领域：</p>
+                    <ul>
+                        <li>单打竞技（市级比赛获奖）</li>
+                        <li>双打配合（最佳搭档奖）</li>
+                        <li>羽毛球装备研究（尤尼克斯装备控）</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <img src="https://source.unsplash.com/600x400/?badminton" alt="羽毛球运动" class="badminton-img">
+    </main>
+</div>
+
+<script>
+    // 动态运动名言
+    const sportsQuotes = [
+        "羽毛球是用脚步写诗的运动",
+        "球不落地永不放弃",
+        "每个扣杀都是力量的绽放",
+        "羽毛球是空中芭蕾"
+    ];
+
+    // 随机显示名言
+    document.querySelector('h2').innerHTML += `<br><small>"${sportsQuotes[Math.floor(Math.random()*sportsQuotes.length)]}"</small>`;
+
+    // 图片悬停效果
+    document.querySelector('.badminton-img').addEventListener('mouseover', function() {
+        this.style.transform = 'scale(1.02)';
+        this.style.transition = 'transform 0.3s ease';
+    });
+
+    document.querySelector('.badminton-img').addEventListener('mouseout', function() {
+        this.style.transform = 'scale(1)';
+    });
+</script>
+</body>
+</html>
